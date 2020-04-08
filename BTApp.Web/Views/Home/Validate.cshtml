@@ -1,0 +1,16 @@
+﻿@model BTApp.Web.Models.UserPasswordDTO
+    <div class="container">
+        @using (Html.BeginForm("ValidatePassword", "Home", FormMethod.Post))
+        {
+            @Html.LabelFor(model => model.UserID)
+            @Html.TextBoxFor(model => model.UserID)
+            @Html.ValidationMessageFor(model => model.UserID)
+            @Html.LabelFor(model => model.Password)
+            @Html.TextBoxFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+
+        <button type="submit">ValidatePassword</button>
+
+        }
+
+    </div>

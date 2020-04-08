@@ -1,0 +1,28 @@
+﻿@model BTApp.Web.Models.UserPasswordDTO
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+</div>
+
+<div class="container">
+    @using (Html.BeginForm("Generate", "Home", FormMethod.Post))
+    {
+        @Html.LabelFor(model => model.UserID)
+        @Html.TextBoxFor(model => model.UserID)
+        @Html.ValidationMessageFor(model => model.UserID)
+        @Html.LabelFor(model => model.ValideFrom)
+        @Html.EditorFor(model => model.ValideFrom, new { type = "time" })
+        @Html.ValidationMessageFor(model => model.ValideFrom)
+
+        <button type="submit">Generate</button>
+
+        <p>@Html.TextBoxFor(model => model.IsValid)</p>
+
+    }
+
+</div>
+
